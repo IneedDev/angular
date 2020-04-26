@@ -1,6 +1,10 @@
-<h1> {{title}}</h1>
-  
-<input type="text" [(ngModel)]="name">
-<p>{{ name }} </p> 
-
-<app-server-selector></app-server-selector>
+<app-header></app-header>
+<!-- <app-servers></app-servers> -->
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <app-recipes></app-recipes>
+            <app-shopping-list></app-shopping-list>
+        </div>
+    </div>
+</div>

@@ -1,1 +1,33 @@
-<p>servers works!</p>
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12">
+            <p>servers works!</p>
+            <br>
+            <button class="btn btn-primary"  
+            [disabled]="!allowNewServer" (click)="onCreateServer()">Add server</button>
+            <br> {{allowNewServer}} <br>
+            Inner text below:<p [innerText]="allowNewServer"></p><br>
+            <h3>Action after click event:</h3>
+            {{serverCreationStatus}}
+            <br><br>
+            <h4> App component replication nested app-server-selector
+                 inside app-servers 
+                which is alled from app.component html</h4>
+            <app-server-selector></app-server-selector>
+            <app-server-selector></app-server-selector>
+            <br>
+            <h3>Input form one way binding</h3><br>
+            <input type="text"
+            class="form-control"
+            (input)="onUpdateServerName($event)">
+            <p>{{ serverNameFromInput }} </p>
+
+            <h3>Input form two way binding</h3><br>
+            <input type="text"
+            class="form-control"
+            [(ngModel)]="serverNameFromInput">
+            <p>{{ serverNameFromInput }} </p>
+
+        </div>
+    </div>
+</div>
